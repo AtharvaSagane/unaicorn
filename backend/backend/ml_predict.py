@@ -1,9 +1,13 @@
 def prediction_model(pclass, sex, age, sibsp, parch, fare, embarked, title):
     import pickle
     import pandas as pd
+
+    # Load model + features
     model_data = pickle.load(open("titanic_model.sav", "rb"))
     model = model_data["model"]
     features = model_data["features"]
+
+    # Prepare input DataFrame in correct feature order
     input_df = pd.DataFrame([{
         "Pclass": pclass,
         "Sex": sex,
@@ -16,7 +20,7 @@ def prediction_model(pclass, sex, age, sibsp, parch, fare, embarked, title):
     }])[features]
 
     prediction = model.predict(input_df)[0]
-    if prediction == 1:
-        return "Survived!!"
+    if prediction == 1 :
+        return "Survived!!!"
     else :
         return "Sorry"
