@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titanic Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <h1>Home Page</h1>
+    <button type="button" onclick="clicked()">yooo</button>
     <p>Get Your Titanic Predictions Here !!</p>
     <p>Enter Details Below</p>
 
@@ -30,5 +33,6 @@
         <input type="text" name="title" >
         <input type="submit">
     </form>
+    <script type="text/javascript" src = "{% static 'main.js' %}"></script>
 </body>
 </html>

@@ -26,13 +26,11 @@ SECRET_KEY = 'django-insecure-t*elephy)5l&sgc!n5p&5cf($0(0j9g)msnmgv5u#%te@yt1#_
 DEBUG = True
 ALLOWED_HOSTS = ["*", "13.232.60.31", "43.205.191.249", "localhost", "127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = [
+'''CSRF_TRUSTED_ORIGINS = [
     "http://13.232.60.31",
     "http://3.109.185.240",
     "http://43.205.191.249",
-]
-
-
+]'''
 
 # Application definition
 
@@ -119,9 +117,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-
+import os.path
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
